@@ -1,8 +1,19 @@
 module.exports = {
   someSidebar: {
-    Welcome: ['intro', 'howitworks'],
-    ["Security"]: ['doc1'],
+    Welcome: [
+      'intro'
+    ],
+    ["How it Works"]: [
+      'email',
+      'p2p',
+      'deviceSyncing',
+      'backups'
+    ],
+    Security: [
+      'accountCreation',
+      'encryption'
+    ],
     ["Client SDK"]: ['doc2'],
-    FAQ: ['mdx'],
+    FAQ: ['doc1'],
   },
 };
