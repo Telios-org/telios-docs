@@ -4,7 +4,7 @@ title: Encryption
 sidebar_label: Encryption
 ---
 
-Telios uses cryptography based on open source components that have been widely used and accepted in the security community. Encryption is handled with the [sodium-native](https://sodium-friends.github.io/docs/) library which provides low level bindings for Libsodium, and with [SQL Cipher](https://www.zetetic.net/sqlcipher/) for indexing encrypted data on local devices. 
+Telios uses cryptography based on open source components that have been widely used and accepted in the security community. Encryption is handled with the [sodium-native](https://sodium-friends.github.io/docs/) library which provides low level bindings for [Libsodium](https://doc.libsodium.org), and with [SQL Cipher](https://www.zetetic.net/sqlcipher/) for indexing encrypted data on local devices. 
 
 Our rule is to encrypt everything possible at rest and in transit by default without compromising on features and usability that users have come to expect in an email client.
 
