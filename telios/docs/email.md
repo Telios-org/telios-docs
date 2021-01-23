@@ -6,11 +6,45 @@ sidebar_label: Email
 
 Our guiding principles regarding email have been to use centralized servers as little as possible, and to store the least amount of encrypted data needed in order to deliver a full-feature email service. We also wanted to support sending and receiving emails from outside the network (from Gmail, Yahoo, etc..), so that the Telios platform could become a viable alternative for users looking to migrate from services like Gmail.
 
+## Terms
+
+### Retrieval Metadata
+This refers to the encrypted metadata that is sent to the API server containing instructions for the recipient(s) on how to retrieve their email from the sender's drive. The outer layer of the encrypted metadata contains the recipient's public key, and the message which is encrypted using the [sealed box](encryption#sealed-box-encryption) method. Decrypting the outer layer will provide the recipient with the information needed to retrieve their email from the sender's drive.
+
+#### Metadata - Encrypted Outer Layer
+``` javascript
+{
+  sbpkey: '03e4dcded30c1adea6a31076de3d223fb6107ca34910c716d42c23ebf119eb19',
+  msg: 'b1b52260b297c3544bea20b891d744bee6e9e1e31af9ceccb70bd4f822797efe0f0305b81a532e4106d1c4d47a7dbaf8f9e59bb0f8eb416575421107cbeb8eabff648ce4644ea6af3c60d1053f81d0d774fa02ea4b9220986a4143f005702b2e43d68d84a6be36e831116cec44c57af13b3bfca7c379b9b13bd9edd2b4676a5f795effef7d4cc99f035f881ff35fd018b68d76d8b58fc86a19f1f79ab050d04054a7067da4d76b833b45d4c1f6e5418357b41978571cf593fb335c244fbcb4e3b3d42859782b2814276ef2183cf5b7af03e9b274801c8ff473b66c700d7abfa36ddbc6201874c8ade8cd33c93c4e026fa9faa34b76e3e0efd64b72ac2a3589bead90c244d453c97f99c17d396b89e6fe938add1dbe22d0c29cbea1a22623ad95dd1ef45774d1a95b721f1bcffe88c1edcfe6dbe708775f73ee6820336b7ef66300cfb18c5145399a20b6af556502f689c1fb6420b6023377b3608250baeac2edd63468885a2d11161b93512a9571622115883a4b2294d189c6330f21b8d888c63569e99b15b97061d2165c40dac4fde2297ba004ee1e6ed47146dd138a6821bdfcce48466d1bf09690918f322794ff91d83209dd80ef825abdd62c80bd60c41c18c1341284199c348263cb06f216294a7c2978010aedab83c7c785070d91fcc51021922dc6c9fde7dad4d002e07ae80c41f9ac5d667cd49ac6104e2f4c3cae0ee6fa3ddb2c05a4c1bf36141d138c96104e82fc84b53ae82da84748a5c3a646ee52e5b1d2f75d1bb231ab372badbb120f755d8fae8af705a26989dcc422f8d1e5c2b3e98c6447464b8b8360665a9b921890a90e0791697bf4cfe0bbfbddffa48f95c405ce99db35c4eedbc71974ff6b8e0788b707bb6f42a2b43848de9536c832cd9d283cd5fce8f4f0b0899f91df8e0d7ece338abfc93d1b29b6b281c07b946a0b0c735b6cb98730d1c43cb6020a627ecf69b373920cd712a4aff86b630c7823f8c174a25167509c362e3dec9171e8bef9f884eb2a72d79f4521a70961c01002480e219c39ea772cd3f7d2dfffbe7f8e39857c87cc447085d2a4efa2f3ca397b021979f66c8f633f8150f8a943d7a4fe7057322cc7e675541856b7827ac80ea53b2136504ef78af3f975fa20a392c16f59a040bd362654cf9812836becf'
+}
+```
+
+#### Metadata - Decrypted Outer Layer
+```javascript
+{
+  key: '247c1d582619e8d874ea270713825f01526b1222bd78313a3318163e67b773cf', // secret key
+  header: 'a1f4b1595a2f780e8b2c14542d949b9e294b76055d548bc1',
+  drive: 'hyper://7b308548d91af16e826ea875c8503953c36f5c2956fda6a769ab8c614413d93e', // Sender's public hyperdrive address
+  path: '6333b82c-cb09-4a6f-b60c-40deee7607ea' // name of the file
+  sig: 'b9af22edc918013cb60ff8aa4713e25fa919bd9199378f0cf6650b39c668099e06652d6f575108f9301a2550ba51ad4802bbf2ed64293377386e0305669b26f0' 
+  // Bob's signature to verify this message came from him
+}
+```
+
+:::note
+
+This is only required when the recipient is offline and is unable to receive thier message through the peer-to-peer network.
+
+:::
+
+
+---
+
 ## Receiving Emails
-When receiving an email from either outside or inside the Telios network, a check will be done to determine the appropriate method for delivery. The client will always prefer to receive data over the p2p network and only use alternative methods when clients are offline.
+When receiving an email from either outside or inside the Telios network, a check will be done to determine the appropriate method for delivery. The client will always prefer to receive data over the peer-to-peer network and only use alternative methods when clients are offline.
 
 ### Peer-to-Peer
-Emails are delivered through the [Peer-to-Peer](p2p) network when the sender and recipient(s) are online and the sender has the recipient's discovery key. Discovery keys are public addresses used to find peers on the network. The [discovery key](p2p) is stored locally when new contacts are created and is automatically used in the background.
+Emails are delivered through the [peer-to-Peer](p2p) network when the sender and recipient(s) are online and the sender has the recipient's discovery key. Discovery keys are public addresses used to find peers on the network. The [discovery key](p2p) is stored locally when new contacts are created and is automatically used in the background.
 
 ---
 
@@ -20,8 +54,8 @@ Emails are delivered through the [Peer-to-Peer](p2p) network when the sender and
 
 
 1. After Bob finishes composing his email and hits send, his client encrypts his email and streams it to his local drive.
-2. Using Alice's public discovery key, Bob sends Alice encrypted metadata with instructions on how she can retrieve Bob's email.
-3. Alice decrypts Bob's metadata and verifies it's authenticity. She then uses the drive's location and email path to connect to Bob's drive and streams the email back to her client.
+2. Using Alice's public discovery key, Bob sends Alice encrypted [retrieval metadata](email#retrieval-metadata) with instructions on how she can retrieve Bob's email.
+3. Alice decrypts Bob's metadata uses the drive's location and email path to connect to Bob's drive and streams the email back to her client.
 4. Alice decrypts the stream using the secret encryption key Bob sent in the encrypted metadata and then encrypts and stores the email on her drive.
 
 ---
@@ -39,7 +73,7 @@ Emails are delivered through the [Peer-to-Peer](p2p) network when the sender and
 
 
 ### External Emails 
-We support receiving emails from providers that do not use our protocol. These incoming emails are handled by our own mailserver that's been customized to adhere to our strict security and privacy policies. At no time are emails stored in plain text on the email server. After the public keys are retrieved they are immediately encrypted and streamed to either the Mailserver's drive, or directly to the recipient(s).
+We support receiving emails from providers that do not use our protocol. These incoming emails are handled by our own mailserver that's been customized to adhere to our strict security and privacy policies. At no time are emails stored in plain text on the Mailserver. After the public keys are retrieved they are immediately encrypted and streamed to either the Mailserver's drive, or directly to the recipient(s).
 
 ---
 
@@ -74,9 +108,9 @@ Encrypted emails are only stored on the Mailserver's drive for 30 days. If the a
 :::
 
 ## Sending Emails
-Sending emails to external mailboxes is fairly straightforward. The email JSON is sent to the API server in plain text and uses SMTP to deliver the message to Bob's external mailbox. These emails only pass through the API and Mailserver to deliver Bob's email and aren't logged or stored. 
+Sending emails to external mailboxes is fairly straightforward. The email JSON is sent to the API server in plain text and uses SMTP to deliver the message to Bob's external mailbox. These emails only pass through the API and Mailserver to deliver Bob's email and are never logged or stored. 
 
-External mailboxes that do not support end-to-end ecryption, will have to be sent in plain text to be delivered. We do everything on our end to ensure as much privacy as possible, but it should be noted these types of emails will not be encrypted when delivered to their recipient(s) or when they're passing through our servers.
+External mailboxes that do not support end-to-end ecryption, will have to be sent in plain text to be delivered. We do everything on our end to ensure as much privacy as possible, but it should be noted these types of emails will not be encrypted when delivered to their recipient(s), or when they're passing through our servers.
 
 ![](../static/img/Sending_External_Emails.svg)
 
