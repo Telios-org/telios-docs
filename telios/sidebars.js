@@ -5,7 +5,6 @@ module.exports = {
     ],
     ["How it Works"]: [
       'email',
-      'p2p',
       'deviceSyncing',
       'backups'
     ],
@@ -13,7 +12,12 @@ module.exports = {
       'accountCreation',
       'encryption'
     ],
-    ["Client SDK"]: ['doc2'],
-    FAQ: ['doc1'],
+    // ["Client SDK"]: ['doc2'],
+    FAQ: [
+      'faqGeneral',
+      'faqPrivacy',
+      'faqEncryption',
+      'doc1'
+    ],
   },
 };

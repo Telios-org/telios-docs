@@ -4,12 +4,12 @@ title: Sending and Receiving Emails
 sidebar_label: Email
 ---
 
-Our guiding principles regarding email have been to use centralized servers as little as possible, and to store the least amount of encrypted data needed in order to deliver a full-feature email service. We also wanted to support sending and receiving emails from outside the network (from Gmail, Yahoo, etc..), so that the Telios platform could become a viable alternative for users looking to migrate from services like Gmail.
+Our guiding principles regarding email have been to use centralized servers as little as possible and store the least amount of encrypted data needed to deliver a full-feature email service. We also wanted to support sending and receiving emails from outside the network (from Gmail, Yahoo, etc.) so that the Telios platform could become a viable alternative for users looking to migrate from services like Gmail.
 
 ## Terms
 
 ### Retrieval Metadata
-This refers to the encrypted metadata that is sent to the API server containing instructions for the recipient(s) on how to retrieve their email from the sender's drive. The outer layer of the encrypted metadata contains the recipient's public key, and the message which is encrypted using the [sealed box](encryption#sealed-box-encryption) method. Decrypting the outer layer will provide the recipient with the information needed to retrieve their email from the sender's drive.
+Retrieval metadata refers to the encrypted metadata sent to the API server containing instructions for the recipient(s) on how to retrieve their email from the sender's drive. The encrypted metadata's outer layer includes the recipient's public key and the message, which is encrypted using the [sealed box](encryption#sealed-box-encryption) method. Decrypting the outer layer will provide the recipient with the information needed to retrieve their email from the sender's drive.
 
 #### Metadata - Encrypted Outer Layer
 ``` javascript
@@ -41,10 +41,10 @@ This is only required when the recipient is offline and is unable to receive thi
 ---
 
 ## Receiving Emails
-When receiving an email from either outside or inside the Telios network, a check will be done to determine the appropriate method for delivery. The client will always prefer to receive data over the peer-to-peer network and only use alternative methods when clients are offline.
+The Mailserver will determine the appropriate delivery method when receiving an email from either outside or inside the Telios network. The client will always prefer to receive data over the peer-to-peer network and only use alternative methods when clients are offline.
 
 ### Peer-to-Peer
-Emails are delivered through the [peer-to-Peer](p2p) network when the sender and recipient(s) are online and the sender has the recipient's discovery key. Discovery keys are public addresses used to find peers on the network. The [discovery key](p2p) is stored locally when new contacts are created and is automatically used in the background.
+Emails are delivered through the [peer-to-Peer](p2p) network when the sender and recipient(s) are online and the sender has the recipient's discovery key. Discovery keys are public addresses used to find peers on the network. The [discovery key](p2p) is stored locally when creating new contacts and automatically used when sending new emails over the network.
 
 ---
 
@@ -73,7 +73,7 @@ Emails are delivered through the [peer-to-Peer](p2p) network when the sender and
 
 
 ### External Emails 
-We support receiving emails from providers that do not use our protocol. These incoming emails are handled by our own mailserver that's been customized to adhere to our strict security and privacy policies. At no time are emails stored in plain text on the Mailserver. After the public keys are retrieved they are immediately encrypted and streamed to either the Mailserver's drive, or directly to the recipient(s).
+Our mail server supports receiving emails from providers that do not use our protocol. The mail server adheres to our strict security and privacy policies. It does not create logs or store emails in plain text, and after the public keys are retrieved, emails are immediately encrypted and streamed to either the mail server's peer-to-peer drive or directly to the recipient(s).
 
 ---
 
@@ -103,14 +103,14 @@ We support receiving emails from providers that do not use our protocol. These i
 
 :::note
 
-Encrypted emails are only stored on the Mailserver's drive for 30 days. If the account has maxed out their storage limit, the Mailserver will remove the oldest emails to make room for new messages.
+Encrypted emails are only stored on the Mailserver's drive for 30 days. If the account has maxed out its storage limit, the mail server will remove the oldest emails to make room for new messages.
 
 :::
 
 ## Sending Emails
-Sending emails to external mailboxes is fairly straightforward. The email JSON is sent to the API server in plain text and uses SMTP to deliver the message to Bob's external mailbox. These emails only pass through the API and Mailserver to deliver Bob's email and are never logged or stored. 
+Sending emails to external mailboxes is fairly straightforward. The email JSON is sent to the API server in plain text and uses SMTP to deliver the message to Bob's external mailbox. These emails only pass through the API and Mailserver to deliver Bob's email and are never logged or stored.
 
-External mailboxes that do not support end-to-end ecryption, will have to be sent in plain text to be delivered. We do everything on our end to ensure as much privacy as possible, but it should be noted these types of emails will not be encrypted when delivered to their recipient(s), or when they're passing through our servers.
+External mailboxes that do not support end-to-end encryption will have to be sent in plain text to be delivered. We do everything on our end to ensure as much privacy as possible, but it should be noted these types of emails will not be encrypted when delivered to their recipient(s) or when they're passing through our servers.
 
 ![](../static/img/Sending_External_Emails.svg)
 
@@ -120,6 +120,6 @@ External mailboxes that do not support end-to-end ecryption, will have to be sen
 
 :::note
 
-When sending an email with a mix of recipents with Telios and external mailboxes, the email will still be delivered as plain text to the API server and delivered to all Telios recipients as an [incoming external email](email#external-emails).
+When sending an email with a mix of recipients with Telios and external mailboxes, the email will still be delivered as plain text to the API server and delivered to all Telios recipients as an [incoming external email](email#external-emails).
 
 :::
