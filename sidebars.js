@@ -16,8 +16,7 @@ module.exports = {
     FAQ: [
       'faqGeneral',
       'faqPrivacy',
-      'faqEncryption',
-      'doc1'
+      'faqEncryption'
     ],
   },
 };
