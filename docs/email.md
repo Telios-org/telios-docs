@@ -55,7 +55,7 @@ Emails are delivered through the [peer-to-peer](p2p) network when the sender and
 
 1. After Bob finishes composing his email and hits send, his client encrypts his email and streams it to his local drive.
 2. Using Alice's public discovery key, Bob sends Alice encrypted [retrieval metadata](email#retrieval-metadata) with instructions on how she can retrieve Bob's email.
-3. Alice decrypts Bob's metadata uses the drive's location and email path to connect to Bob's drive and streams the email back to her client.
+3. Alice decrypts Bob's metadata and uses the drive's location and email path to connect to Bob's drive and streams the email back to her client.
 4. Alice decrypts the stream using the secret encryption key Bob sent in the encrypted metadata and then encrypts and stores the email on her drive.
 
 ---
