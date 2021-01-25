@@ -13,7 +13,7 @@ module.exports = {
       title: 'Telios Docs',
       logo: {
         alt: 'Telios',
-        src: '../img/telios_logo.svg',
+        src: 'img/telios_logo.svg',
       },
       items: [
         {
