@@ -12,7 +12,6 @@ module.exports = {
       'accountCreation',
       'encryption'
     ],
-    // ["Client SDK"]: ['doc2'],
     FAQ: [
       'faqGeneral',
       'faqPrivacy',

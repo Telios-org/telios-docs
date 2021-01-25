@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "build:gitlab": "docusaurus build --out-dir public",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
