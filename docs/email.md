@@ -41,7 +41,7 @@ This is only required when the recipient is offline and is unable to receive thi
 ---
 
 ## Receiving Emails
-The Mailserver will determine the appropriate delivery method when receiving an email from either outside or inside the Telios network. The client will always prefer to receive data over the peer-to-peer network and only use alternative methods when clients are offline.
+The mail server will determine the appropriate delivery method when receiving an email from either outside or inside the Telios network. The client will always prefer to receive data over the peer-to-peer network and only use alternative methods when clients are offline.
 
 ### Peer-to-Peer
 Emails are delivered through the [peer-to-Peer](p2p) network when the sender and recipient(s) are online and the sender has the recipient's discovery key. Discovery keys are public addresses used to find peers on the network. The [discovery key](p2p) is stored locally when creating new contacts and automatically used when sending new emails over the network.
@@ -81,10 +81,10 @@ Our mail server supports receiving emails from providers that do not use our pro
 
 ![](../static/img/Incoming_Email_Online.svg)
 
-1. Bob's email provider sends his email to the Telios mailserver.
-2. The Telios mailserver checks the recipient list for Telios accounts from the email metadata.
-3. The account public keys are returned back to the Mailserver where they are used to encrypt the email retrieval metadata if a peer-to-peer connection cannot be made with the recipient(s).
-4. If the recipient(s) are online, the mailserver will stream the encrypted email directly to the recipient(s) drive.
+1. Bob's email provider sends his email to the Telios mail server.
+2. The Telios mail server checks the recipient list for Telios accounts from the email metadata.
+3. The account public keys are returned back to the mail server where they are used to encrypt the email retrieval metadata if a peer-to-peer connection cannot be made with the recipient(s).
+4. If the recipient(s) are online, the mail server will stream the encrypted email directly to the recipient(s) drive.
 
 ---
 
@@ -92,23 +92,23 @@ Our mail server supports receiving emails from providers that do not use our pro
 
 ![](../static/img/Incoming_Email_Offline.svg)
 
-1. Bob's email provider sends his email to the Telios mailserver.
-2. The Telios mailserver checks the recipient(s) for Telios accounts from the email metadata.
-3. The account public keys are returned back to the mailserver where they are used to encrypt the email retrieval metadata.
-4. If the recipient(s) are offline, the Mailserver posts the encrypted email retrieval metadata to the server for Alice to retrieve and decrypt when she comes back online.
-5. The Mailserver encrypts the email with a unique secret key and streams it to the Mailserver drive.
+1. Bob's email provider sends his email to the Telios mail server.
+2. The Telios mail server checks the recipient(s) for Telios accounts from the email metadata.
+3. The account public keys are returned back to the mail server where they are used to encrypt the email retrieval metadata.
+4. If the recipient(s) are offline, the mail server posts the encrypted email retrieval metadata to the server for Alice to retrieve and decrypt when she comes back online.
+5. The mail server encrypts the email with a unique secret key and streams it to the mail server drive.
 6. Alice comes back online and pulls the retrieval metadata from the server.
-7. After decrypting the retrieval metadata, she uses the instructions to connect to the Mailserver's drive and stream the email back to her client where she decrypts the message and saves it onto her personal drive.
-8. After she confirms she has the email, she then signals to the server she has retrieved the email and the retrieval metadata is destroyed along with the encrypted email on the Mailserver's drive.
+7. After decrypting the retrieval metadata, she uses the instructions to connect to the mail server's drive and stream the email back to her client where she decrypts the message and saves it onto her personal drive.
+8. After she confirms she has the email, she then signals to the server she has retrieved the email and the retrieval metadata is destroyed along with the encrypted email on the mail server's drive.
 
 :::note
 
-Encrypted emails are only stored on the Mailserver's drive for 30 days. If the account has maxed out its storage limit, the mail server will remove the oldest emails to make room for new messages.
+Encrypted emails are only stored on the mail server's drive for 30 days. If the account has maxed out its storage limit, the mail server will remove the oldest emails to make room for new messages.
 
 :::
 
 ## Sending Emails
-Sending emails to external mailboxes is fairly straightforward. The email JSON is sent to the API server in plain text and uses SMTP to deliver the message to Bob's external mailbox. These emails only pass through the API and Mailserver to deliver Bob's email and are never logged or stored.
+Sending emails to external mailboxes is fairly straightforward. The email JSON is sent to the API server in plain text and uses SMTP to deliver the message to Bob's external mailbox. These emails only pass through the API and mail server to deliver Bob's email and are never logged or stored.
 
 External mailboxes that do not support end-to-end encryption will have to be sent in plain text to be delivered. We do everything on our end to ensure as much privacy as possible, but it should be noted these types of emails will not be encrypted when delivered to their recipient(s) or when they're passing through our servers.
 
@@ -116,7 +116,7 @@ External mailboxes that do not support end-to-end encryption will have to be sen
 
 1. Alice encrypts her email and stores it on her drive.
 2. She then sends the plain text email to the API server.
-3. The Mailserver delivers Bob's message via SMTP to his external mailbox
+3. The mail server delivers Bob's message via SMTP to his external mailbox
 
 :::note
 
