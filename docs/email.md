@@ -44,7 +44,7 @@ This is only required when the recipient is offline and is unable to receive thi
 The mail server will determine the appropriate delivery method when receiving an email from either outside or inside the Telios network. The client will always prefer to receive data over the peer-to-peer network and only use alternative methods when clients are offline.
 
 ### Peer-to-Peer
-Emails are delivered through the [peer-to-Peer](p2p) network when the sender and recipient(s) are online and the sender has the recipient's discovery key. Discovery keys are public addresses used to find peers on the network. The [discovery key](p2p) is stored locally when creating new contacts and automatically used when sending new emails over the network.
+Emails are delivered through the [peer-to-peer](p2p) network when the sender and recipient(s) are online and the sender has the recipient's discovery key. Discovery keys are public addresses used to find peers on the network. The [discovery key](p2p) is stored locally when creating new contacts and automatically used when sending new emails over the network.
 
 ---
 
