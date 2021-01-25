@@ -2,7 +2,7 @@ module.exports = {
   title: 'Telios',
   tagline: 'Encrypted peer to peer email',
   url: 'https://docs.telios.io',
-  baseUrl: '/',
+  baseUrl: '/telios-docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -13,11 +13,11 @@ module.exports = {
       title: 'Telios Docs',
       logo: {
         alt: 'Telios',
-        src: 'img/telios_logo.svg',
+        src: '../img/telios_logo.svg',
       },
       items: [
         {
-          to: 'docs/',
+          to: 'docs/intro',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
