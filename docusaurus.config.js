@@ -44,7 +44,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/Telios-org/telios-docs/edit/master/',
+            'https://gitlab.com/telios2/telios-docs/-/blob/master/',
         },
         blog: {
           showReadingTime: true
