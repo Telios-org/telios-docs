@@ -1,3 +1,12 @@
+stages:
+  - deploy
+  - ci_status
+
+include:
+  - project: telios2/telios-devops
+    ref: master 
+    file: ".gitlab-ci.DiscordWebhook.yml"
+
 image: node:latest
 
 # allow caching for faster deployment
