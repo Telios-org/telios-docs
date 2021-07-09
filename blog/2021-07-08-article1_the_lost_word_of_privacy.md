@@ -8,8 +8,10 @@ author_image_url: https://storage.googleapis.com/indie-hackers.appspot.com/avata
 tags: [facebook, hello, docusaurus]
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 <div style={{textAlign:'center'}}>
-    <img src="/telios-docs/assets/images/navigation_img-b2fd24c52fd5d8678dcc381f4c24fe0f.png" alt="navigation" width="500"/>
+    <img src={useBaseUrl('/img/navigation_img.svg')} alt="navigation" width="500"/>
 </div>
 
 ## Redefining the meaning of privacy
@@ -33,7 +35,7 @@ On the Internet, data privacy refers to the protection of personal data from thi
 Although these online services helped to disrupt and improve how we communicate, network, and develop ourselves, whether professionally or personally. The need to generate profit seems to have neglected the management of users' privacy and calls into question the very idea of individual freedom. According to Ithiel de Sola Pool, the Internet is a "Technology of freedom.". However, the ability to manage and control the disclosure of your personal information seems to be a forgotten right. 1984, a dystopian novel published by George Orwell, approaches the impact of mass surveillance and having a single source of truth on people’s behaviors. In today’s society, giving in personal information without self-analysis seems to appear as the norm. Consequently, it also introduces the concept of freedom of choice as individuals should decide whether or not to share their data. Besides, the collected data aims to address the user's needs and preferences as accurately as possible without their complete awareness. Thus, the use of collected information subtly reinforces or modifies individuals' behaviors and begs the question to what extent users have control over their own decisions? Some could argue that George Orwell was not too far from the truth...
 
 <div style={{textAlign:'center'}}>
-    <img src="/telios-docs/assets/images/notif_img-34462dc647814add9e9673e1900c891d.png" alt="navigation" width="500"/>
+    <img src={useBaseUrl('/img/notification_img.svg')} alt="navigation" width="500"/>
 </div>
 
 Online privacy tends only to offer a single and simplistic opinion; privacy is for people with bad intentions, and if one has nothing to hide, there is no need to be private. This argument throws at people a binary judgment classifying them as a good or bad person, discouraging them from the desire to access more privacy. Consequently, taking away their right to state a contradictory opinion. The saying: "Not every bit of truth is fit to be told." also applies to personal information. Being a transparent individual does not mean being a constant open book. For example, when communicating with someone else, everyone selects chosen thoughts within their stream of thoughts to express themselves, whether it is a positive, neutral or negative statement. This intellectual privacy and property is fundamental to preserve the comfort and freedom of choice of each of us when interacting. Additionally, if we could read everyone’s thoughts, do you think our discussions would be as genuine and authentic? Would we feel comfortable and free to imagine a contractitory opinion? Whether it is physically or online, privacy is crucial to maintain liberty and authenticity  in our way of communicating. 
@@ -56,7 +58,7 @@ Online interactions generate the exchange of data which, in most cases, are stor
 * Decrypted data directly accessible to companies. It gives the opportunity to governments to use leverage against these companies to access their servers and retrieve data about its citizens without their knowledge.
 
 <div style={{textAlign:'center'}}>
-    <img src="/telios-docs/assets/images/cyber_crime_img-4234d77935c09c507d8338fd77ce6b16.png" alt="navigation" width="500"/>
+    <img src={useBaseUrl('/img/cyber_crime_img.svg')} alt="navigation" width="500"/>
 </div>
 
 During the past 18 months, two factors impacted the growth of data transactions, the expansion of Internet adoption and the recent COVID-19 pandemic (November 2020). Both factors disrupted society's habits by migrating from in-person to remote work (a 35% increase) and modifying purchasing and communication behaviors. Those behavioral changes have resulted in an increase in the average online time spent per day. Thus, directly impacting the total amount of stored data. Therefore, a successful attack on a targeted server represents a considerable threat for everyone having personal information on that server. Cyber-attacks have also risen since the beginning of the COVID-19 pandemic:
@@ -96,7 +98,7 @@ In 2013, Edward Snowden released to the general public classified information fr
 Despite the willingness of these companies to put in place a lawful framework to limit the government leverage, the government can access the servers at will. The Bullrun program, named after a British civil war, has for purpose to maliciously mislead corporate partners. The NSA proclaimed to reinforce corporate partners' IT security but, in reality, built backdoors to facilitate their access to sensitive information. Additionally, the fast-growing expansion of technology considerably alleviates the ability of governmental institutions to monitor individuals. Based on the Bankston-Soltani principle: "If the cost of the surveillance using the new technique is an order of magnitude less than the cost of the surveillance without using the new technique, then the new technique violates a reasonable expectation of privacy." This principle aims to adjust the Fourth Amendment to adjust governments' ability to retrieve data about their citizens. 
 
 <div style={{textAlign:'center'}}>
-    <img src="/telios-docs/assets/images/spying_img-08db2df196132e8f41d73236d2830a46.png" alt="navigation" width="500"/>
+    <img src={useBaseUrl('/img/spying_img.svg')} alt="navigation" width="500"/>
 </div>
 
 In 2018, the Cambridge Analytica story broke and revealed that Cambridge Analytica, a British consulting firm, harvested data from 87 million Facebook users without their consent. The company used an app called "This Is Your Digital Life", created by Aleksandr Kogan, a data scientist from the University of Cambridge. Cambridge Analytica offered Facebook users to complete a behavioral questionnaire to establish a psychological profile for academic research. Instead, the application collected personal Facebook information from respondents, including their private Facebook social connections. Politicians including Ted Cruz and Donald Trump utilized the harvested data to support their campaigns by tailoring targeted advertisements.
@@ -107,4 +109,4 @@ Breaches and government interventions demonstrate the vulnerability of our data 
     
 Online privacy seems to have diminished for the use of comfort, the need to generate profit, and the monitoring of the masses. Even though we might feel secure while communicating from our home, the World Wide Web is far from offering the same security prerogative. Privacy is the right of each individual to define his boundaries in which he feels safe to think, behave and evolve. "There is a big difference between secrecy and privacy." Dick Durbin.
 
-[Learn how Telios redefines online privacy!](/telios-docs/blog/teliosvision)
+<!---[Learn how Telios redefines online privacy!](/telios-docs/blog/teliosvision)--->
