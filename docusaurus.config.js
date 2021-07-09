@@ -10,19 +10,24 @@ module.exports = {
   projectName: 'Telios', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'Telios Docs',
+      title: 'Telios',
       logo: {
         alt: 'Telios',
         src: 'img/telios_logo.svg',
+        href: 'https://telios.io/'
       },
       items: [
         {
           to: 'docs/intro',
           activeBasePath: 'docs',
-          label: 'Docs',
+          label: 'Documentation',
           position: 'left',
         },
-        // {to: 'blog', label: 'Blog', position: 'left'},
+        {
+          to: 'blog', 
+          label: 'Blog', 
+          position: 'left'
+        },
         {
           href: 'https://github.com/Telios-org',
           label: 'GitHub',
