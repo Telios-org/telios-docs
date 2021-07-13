@@ -59,7 +59,7 @@ Telios uses peer-to-peer (P2P) technology to enable its users to communicate. **
 ### Road to data ownership
 
 <div style={{textAlign:'center'}}>
-    <img src={useBaseUrl('/img/road_to_data_ownership_img.svg')} alt="Severs" width="500"/>
+    <img src={useBaseUrl('/img/road_to_data_ownership_img.svg')} alt="Road to Data Ownership" width="500"/>
 </div>
 
 **A P2P network brings a different meaning to users' private data ownership**. It differs from client-server architecture, depending on servers (suppliers) to provide information to the requester (client/customer). An example of a client-server architecture is Google. Google services represent a server where a Google account is a client. Let's illustrate the difference of ownership between centralized (client-server architecture) and decentralized (P2P) models. When a user decides to store content such as photos on Google Drive, Google owns your content. In contrast, users can keep their content on their own devices on P2P communication, thus owning their information. However, even though you own and control your data, it still needs to be secure.
