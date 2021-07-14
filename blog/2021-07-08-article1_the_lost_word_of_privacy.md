@@ -112,4 +112,4 @@ Breaches and government interventions demonstrate the vulnerability of our data 
 Online privacy seems to have diminished for the use of comfort, the need to generate profit, and the monitoring of the masses. Even though we might feel secure while communicating from our home, the World Wide Web is far from offering the same security prerogative. **Privacy is the right of each individual to define his boundaries in which he feels safe to think, behave and evolve**. "_There is a big difference between secrecy and privacy_." Dick Durbin.
 
 But how can we better protect ourselves and regain control over our digital life? <br></br>
-[Learn how Telios redefines online privacy!](./blog/privacyismorethanafeature)
+[Learn how Telios redefines online privacy!](./privacyismorethanafeature)
