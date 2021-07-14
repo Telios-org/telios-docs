@@ -95,5 +95,5 @@ At Telios, we value:
 - `Data Ownership`
 - `Transparency`
 
-#### Gain control over your private data. Privacy is more than a feature!
+#### Online privacy is at a tipping point. [Join the new wave!](https://www.telios.io)
 
