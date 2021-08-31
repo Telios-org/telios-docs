@@ -24,7 +24,7 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'blog',
+          href: 'https://blog.telios.io',
           label: 'Blog',
           position: 'left'
         },
