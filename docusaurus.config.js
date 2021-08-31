@@ -18,7 +18,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/intro',
+          to: '/intro',
           activeBasePath: 'docs',
           label: 'Documentation',
           position: 'left',
@@ -46,14 +46,14 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
+          path: './docs',
+          routeBasePath: '/', // Set this value to '/'.
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/Telios-org/telios-docs/blob/master',
+            'https://github.com/Telios-org/telios-docs/blob/master'
         },
-        blog: {
-          showReadingTime: true
-        },
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
