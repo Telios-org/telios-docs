@@ -1,6 +1,7 @@
 ---
 id: intro
 title: Introduction
+slug: /
 ---
 
 Telios is a private email service that allows you to securely send and receive end-to-end encrypted emails over a peer-to-peer network. We give you complete ownership of your data by encrypting and storing everything on your local devices. No third party, government, or even Telios can read your unencrypted data. The only way to access your unencrypted data is by using a memorized master password on your physical device.
