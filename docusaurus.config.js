@@ -14,7 +14,8 @@ module.exports = {
       logo: {
         alt: 'Telios',
         src: 'img/telios_logo.svg',
-        href: 'https://telios.io/'
+        href: 'https://telios.io/',
+        target: '_self'
       },
       items: [
         {
@@ -25,6 +26,7 @@ module.exports = {
         },
         {
           href: 'https://blog.telios.io',
+          target: '_self',
           label: 'Blog',
           position: 'left'
         },
