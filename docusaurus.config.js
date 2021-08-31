@@ -24,8 +24,8 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'blog', 
-          label: 'Blog', 
+          to: 'blog',
+          label: 'Blog',
           position: 'left'
         },
         {
@@ -49,7 +49,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://gitlab.com/telios2/telios-docs/-/blob/master/',
+            'https://github.com/Telios-org/telios-docs/tree/master/docs',
         },
         blog: {
           showReadingTime: true
