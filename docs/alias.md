@@ -23,7 +23,7 @@ Log into your Telios account. If you don’t have an account sign up for the wai
 The first time you add an alias you will be asked to create your namespace. 
 
 <div style={{textAlign:'center'}}>
-    <img src={useBaseUrl('../static/img/create_namespace1.png')} alt="navigation" width="700"/>
+    <img src={useBaseUrl('/img/create_namespace1.png')} alt="navigation" width="700"/>
 </div>
 
 <br/>
@@ -35,7 +35,7 @@ Your namespace helps link your Telios account to your alias address(es).
 - **Option 2**: Enter the namespace of your choice.
 
 <div style={{textAlign:'center'}}>
-    <img src={useBaseUrl('../static/img/create_namespace2.png')} alt="navigation" width="700"/>
+    <img src={useBaseUrl('/img/create_namespace2.png')} alt="navigation" width="700"/>
 </div>
 
 <br/>
@@ -51,7 +51,7 @@ A unique public and private public keypair are generated for each alias namespac
 <br/>
 
 <div style={{textAlign:'center'}}>
-    <img src={useBaseUrl('../static/img/create_alias1.png')} alt="navigation" width="700"/>
+    <img src={useBaseUrl('/img/create_alias1.png')} alt="navigation" width="700"/>
 </div>
 
 <br/>
@@ -66,7 +66,7 @@ Your alias will create a folder named after your chosen alias. Every email sent 
 You can add forwarding addresses, so every mail sent to your alias address will be sent to your chosen forwarding address(es). 
 
 <div style={{textAlign:'center'}}>
-    <img src={useBaseUrl('../static/img/create_alias2_vf.png')} alt="navigation" width="700"/>
+    <img src={useBaseUrl('/img/create_alias2_vf.png')} alt="navigation" width="700"/>
 </div>
 
 ### Step 4 - Manage your alias.
@@ -74,7 +74,7 @@ You can add forwarding addresses, so every mail sent to your alias address will 
 <br/>
 
 <div style={{textAlign:'center'}}>
-    <img src={useBaseUrl('../static/img/manage_alias.png')} alt="navigation" width="700"/>
+    <img src={useBaseUrl('/img/manage_alias.png')} alt="navigation" width="700"/>
 </div>
 
 <br/>
@@ -82,7 +82,7 @@ You can add forwarding addresses, so every mail sent to your alias address will 
 Edit, deactivate, delete or add an alias.
 
 <div style={{textAlign:'center'}}>
-    <img src={useBaseUrl('../static/img/edit_alias.png')} alt="navigation" width="700"/>
+    <img src={useBaseUrl('/img/edit_alias.png')} alt="navigation" width="700"/>
 </div>
 
 <br/>
