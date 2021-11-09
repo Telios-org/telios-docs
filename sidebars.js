@@ -3,6 +3,10 @@ module.exports = {
     Welcome: [
       'intro'
     ],
+    ["Getting Started"]: [
+      'createAccount',
+      'alias'
+    ],    
     ["How it Works"]: [
       'email',
       'deviceSyncing',
@@ -16,6 +20,6 @@ module.exports = {
       'faqGeneral',
       'faqPrivacy',
       'faqEncryption'
-    ],
+    ]
   },
 };
