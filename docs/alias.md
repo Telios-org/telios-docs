@@ -12,7 +12,7 @@ Beyond the potential risk of having your email address compromised by a hacker o
 
 Click on the video thumbnail below to learn how to create and use alias or/and follow our guide.
 
-[![Account Image](../static/img/alias_thumbnail.jpg)]("https://www.youtube.com/watch?v=AjuSqb1z8d8 ""CREATE AND USE ALIAS")
+[![Account Image](../static/img/alias_thumbnail.jpg)](https://www.youtube.com/watch?v=AjuSqb1z8d8)
 
 ### Step 1 - Log into your account or sign up.
 
