@@ -8,7 +8,7 @@ sidebar_label: Create My Account
 
 Click on the video thumbnail below to learn how to create your account.
 
-[![Account Image](../static/img/create_account_thumbnail.jpg)]("https://www.youtube.com/watch?v=gUk2q75os5w "CREATE A TELIOS EMAIL ACCOUNT IN LESS THAN 30 SEC")
+[![Account Image](../static/img/create_account_thumbnail.jpg)](https://www.youtube.com/watch?v=gUk2q75os5w)
 
 :::caution
 
